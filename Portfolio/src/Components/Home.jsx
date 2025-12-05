@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 
 import Dermaluxe from '../Assets/Dermaluxe.png';
@@ -40,43 +40,53 @@ const Home = () => {
 
     const [activeProjectType, setActiveProjectType] = useState("website");
 
+    const [showSplash, setShowSplash] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowSplash(false);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     const allProjects = [
         {
-            title: "Spotify Profile",
+            title: "E Bird ( WorkFlow & Document Tracking)",
             description: "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-            techTags: ["React", "Express", "Spotify API", "Heroku"],
+            techTags: ["React", "MongoDb", "Java", "Postman", "SpringBoot"],
             imageUrl: EBird,
             linkUrl: "",
             type: "webApp"
         },
         {
-            title: "E-commerce Backend API",
-            description: "A robust and scalable backend system for a modern e-commerce platform, handling user authentication, product management, and order processing using a microservices architecture.",
-            techTags: ["Java", "Spring Boot", "PostgreSQL", "Kafka", "Docker"],
+            title: "Aethrix Software",
+            description: "Founded and operate Aethrix Software, delivering tailored software solutions by understanding client requirements and providing optimal outcomes. Focused on translating client needs into high-quality, efficient applications, ensuring maximum satisfaction and impact.",
+            techTags: ["React", "EmailJs", "Vite", "CSS", "MongoDb",],
             imageUrl: Aethrix,
             linkUrl: "https://github.com/su-bathi3210/AethrixSoftware",
             type: "website"
         },
         {
-            title: "Real-time Chat Application",
-            description: "A full-stack application providing instant messaging functionality, supporting private and group chats, using WebSockets for live communication updates.",
-            techTags: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
+            title: "4X4 AutoMotive Service pvt (ltd)",
+            description: "Developed an interactive web application for 4x4 Automotive Service, enabling customers to view their vehicle service details and receive cost and time estimates, improving transparency and enhancing the overall service experience.",
+            techTags: ["React", "EmailJs", "Vite", "CSS", "MongoDb",],
             imageUrl: Automotive,
             linkUrl: "https://github.com/su-bathi3210/4X4-AUTOMOTIVE-SERVICE",
             type: "website"
         },
         {
-            title: "Personal Portfolio Website",
-            description: "The source code for this very website, built with a focus on responsive design, accessibility (WCAG), and modern UI/UX principles to showcase skills and projects.",
-            techTags: ["React", "CSS3", "Framer Motion", "Vite", "Netlify"],
+            title: "Dermaluxe AI Personalized SKincare",
+            description: "Developed an AI-driven platform that delivers personalized skincare product recommendations tailored to individual user profiles and preferences. Designed and implemented an interactive admin interface, enabling content management, article posting, and direct engagement with user queries to enhance the overall user experience.",
+            techTags: ["React", "CSS", "python", "Mon", "java", "Postman"],
             imageUrl: Dermaluxe,
             linkUrl: "https://github.com/su-bathi3210/Dermaluxe",
             type: "website"
         },
         {
-            title: "Image Classification Model Site",
-            description: "A simple front-end website created to showcase the Image Classification model's output via a public API endpoint.",
-            techTags: ["Python", "TensorFlow", "HTML", "CSS", "Flask"],
+            title: "ABC Restaurant",
+            description: "Developed an interactive restaurant platform that allows customers to browse the menu, place orders, manage reservations, and track their cart, enhancing customer service, streamlining operations, and driving increased bookings.",
+            techTags: ["React", "MongoDb", "JAVA", "CSS", "Postman"],
             imageUrl: ABC,
             linkUrl: "https://github.com/su-bathi3210/ABC_Restaurant",
             type: "website"
@@ -214,40 +224,52 @@ const Home = () => {
     };
 
     return (
-        <div className="home-layout">
-            <div className="home-main">
-                <h2 className="name">Subathi Kumarasinghe</h2>
-                <h4 className="role">Associate Software Engineer</h4>
+        <>
+            {showSplash && (
+                <div className={`splash-screen ${!showSplash ? 'fade-out' : ''}`}>
+                    <div className="splash-content">
+                        <h1 className="splash-name">Subathi Kumarasinghe</h1>
+                        <p className="splash-role">Associate Software Engineer</p>
+                        <div className="loading-bar"></div>
+                    </div>
+                </div>
+            )}
 
-                <ul className="menu">
-                    <li
-                        className={activeSection === "about" ? "active" : ""}
-                        onClick={() => setActiveSection("about")}
-                    >
-                        ABOUT
-                    </li>
-                    <li
-                        className={activeSection === "experience" ? "active" : ""}
-                        onClick={() => setActiveSection("experience")}
-                    >
-                        EXPERIENCE
-                    </li>
-                    <li
-                        className={activeSection === "projects" ? "active" : ""}
-                        onClick={() => {
-                            setActiveSection("projects");
-                            setActiveProjectType("website");
-                        }}
-                    >
-                        PROJECTS
-                    </li>
-                </ul>
-            </div>
+            <div className="home-layout animated-background">
+                <div className="home-main">
+                    <h2 className="name">Subathi Kumarasinghe</h2>
+                    <h4 className="role">Associate Software Engineer</h4>
 
-            <div className="main-content">
-                {renderContent()}
+                    <ul className="menu">
+                        <li
+                            className={activeSection === "about" ? "active" : ""}
+                            onClick={() => setActiveSection("about")}
+                        >
+                            ABOUT
+                        </li>
+                        <li
+                            className={activeSection === "experience" ? "active" : ""}
+                            onClick={() => setActiveSection("experience")}
+                        >
+                            EXPERIENCE
+                        </li>
+                        <li
+                            className={activeSection === "projects" ? "active" : ""}
+                            onClick={() => {
+                                setActiveSection("projects");
+                                setActiveProjectType("website");
+                            }}
+                        >
+                            PROJECTS
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="main-content">
+                    {renderContent()}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

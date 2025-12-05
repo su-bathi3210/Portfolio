@@ -14,10 +14,17 @@ const Sidebar = () => {
 
             <div className="top-icons-section">
                 <div className="icon-group">
-                    <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Send Email"><RiMessage3Line className="icon" /></a>
-                    <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><FaLinkedin className="icon" /></a>
-                    <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><FaGithub className="icon" /></a> {/* Corrected URL for Github */}
-                    <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Send Email"><FaRegEnvelope className="icon" /></a>
+                    <a href="https://wa.me/94703464165" target="_blank" rel="noopener noreferrer"
+                        aria-label="Send WhatsApp Message"><RiMessage3Line className="icon" /> </a>
+
+                    <a href="https://www.linkedin.com/in/subathi-kumarasinghe/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn Profile"><FaLinkedin className="icon" /></a>
+
+                    <a href="https://github.com/su-bathi3210" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub Profile"><FaGithub className="icon" /></a>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ksuba3210@gmail.com"
+                        aria-label="Send Email" target="_blank" rel="noopener noreferrer"><FaRegEnvelope className="icon" /></a>
                 </div>
                 <div className="vertical-line"></div>
             </div>
