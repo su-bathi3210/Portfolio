@@ -1,0 +1,102 @@
+/* SideBar CSS */
+
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #e0e0e0;
+    z-index: 1000;
+}
+
+.top-icons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.top-icons-section .icon {
+    font-size: 16px;
+    color: #3d1700;
+    transition: color 0.3s ease-in-out;
+}
+
+.icon-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 200px;
+    background-color: #3d1700;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(270deg);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.copyright-icon {
+    font-size: 14px;
+    margin-right: 5px;
+    color: #3d1700;
+}
+
+.copyright-text {
+    font-size: 14px;
+    color: #3d1700;
+}
+
+
+@media (max-width: 768px) {
+    .sidebar-container {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        height: 50px;
+        width: 100vw;
+        padding: 0 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .top-icons-section {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        flex-grow: 1;
+    }
+
+    .icon-group {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .vertical-line {
+        display: block;
+        width: 150px;
+        height: 1.5px;
+        background-color: #3d1700;
+    }
+
+    .sidebar-footer {
+        position: static;
+        transform: none;
+    }
+}

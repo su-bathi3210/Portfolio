@@ -1,0 +1,595 @@
+.home-layout {
+    display: flex;
+    height: 100vh;
+    color: #000;
+    overflow: hidden;
+}
+
+
+.home-main {
+    width: 320px;
+    padding: 50px 40px;
+    margin-left: 130px;
+    height: 100vh;
+    position: fixed;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.name {
+    margin-top: 80px;
+    text-transform: uppercase;
+    font-size: 60px;
+    color: #3d1700;
+    margin-bottom: 8px;
+}
+
+.role {
+    font-size: 15px;
+    font-weight: 400;
+    color: #025249;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-left: 30px;
+}
+
+.menu li {
+    font-size: 14px;
+    color: #c35548;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s ease-out;
+    position: relative;
+    padding-left: 30px;
+}
+
+.menu li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 1px;
+    width: 20px;
+    background-color: #c35548;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, right 0.3s ease;
+}
+
+.menu li.active::before,
+.menu li:hover::before {
+    height: 2px;
+    width: 100px;
+    background-color: #c35548;
+    left: 0px;
+}
+
+.menu li:hover,
+.menu li.active {
+    opacity: 1;
+    color: #c35548;
+    padding-left: 110px;
+}
+
+.main-content {
+    flex-grow: 1;
+    width: auto;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-left: 700px;
+    min-height: 100vh;
+    padding: 70px;
+    margin-top: 50px;
+}
+
+.about-section p {
+    font-size: 13.2px;
+    line-height: 2.1;
+    margin-bottom: 15px;
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.download-btn {
+    text-transform: uppercase;
+    padding: 10px 15px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 13.5px;
+    transition: 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #333;
+}
+
+.experience-section {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.job-entry {
+    display: flex;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    padding: 20px 10px 20px 15px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.job-entry:hover {
+    background-color: #e0dfdc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.job-dates {
+    width: 130px;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+.job-details {
+    flex-grow: 1;
+    max-width: 650px;
+}
+
+.job-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #c35548;
+    margin-bottom: 2px;
+    transition: color 0.3s;
+}
+
+.job-role {
+    font-size: 13.2px;
+    font-weight: 500;
+    color: #025249;
+    margin-bottom: 10px;
+}
+
+.job-description {
+    font-size: 13.2px;
+    line-height: 2.1;
+    margin-bottom: 5px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-tag {
+    background-color: #741b38;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-tabs {
+    display: flex;
+    gap: 20px;
+}
+
+.project-tab {
+    background: none;
+    border: none;
+    color: #025249;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.project-tab:hover {
+    color: #333;
+}
+
+.project-tab.active-tab {
+    color: #741b38;
+    border-bottom: 4px solid #741b38;
+}
+
+.project-entry {
+    display: flex;
+    gap: 20px;
+    max-width: 700px;
+    padding: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.project-entry:hover {
+    background-color: #e0dfdc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-image-container {
+    flex: 0 0 200px;
+    position: relative;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.project-details {
+    flex-grow: 1;
+}
+
+.project-title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    font-weight: 400;
+    color: #c35548;
+}
+
+.project-description {
+    font-size: 13.2px;
+    text-transform: uppercase;
+    line-height: 1.9;
+    margin-bottom: 10px;
+}
+
+.stack-language {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech {
+    background-color: #741b38;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.contact-section {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.contact-title {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 7px;
+    color: #c35548;
+    text-transform: uppercase;
+}
+
+.contact-paragraph {
+    font-size: 13.2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1.9;
+}
+
+.contact-paragraph span {
+    color: #025249;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 15px;
+    background-color: #e0dfdc;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #e0dfdc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cdcdcd;
+    color: white;
+}
+
+.form-group textarea {
+    height: 140px;
+}
+
+.send-btn {
+    padding: 14px;
+    background: #741b38;
+    border: none;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 12px;
+    text-transform: uppercase
+}
+
+.send-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 13.2px;
+    color: #000;
+    cursor: pointer;
+}
+
+.contact-icon {
+    color: #fff;
+    font-size: 15px;
+}
+
+.email-icon-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e12f2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-icon-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin-icon-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(41, 108, 202);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 1024px) {
+    .home-layout {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+    }
+
+    .home-main {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 30px 20px 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .name {
+        margin-top: 20px;
+        font-size: 45px;
+    }
+
+    .role {
+        font-size: 13.5px;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        padding: 20px 0;
+        border-bottom: 1px solid #ccc;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .menu li {
+        font-size: 13.5px;
+        padding-left: 0;
+        margin-bottom: 0;
+        color: #c35548;
+    }
+
+    .menu li.active {
+        color: #c35548;
+    }
+
+    .menu li::before {
+        content: none;
+    }
+
+    .menu li:hover,
+    .menu li.active {
+        padding-left: 0;
+        color: #c35548;
+        font-weight: bold;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 1.5px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px 25px;
+        margin-top: 0;
+        min-height: auto;
+    }
+
+    .about-section p {
+        font-size: 12px;
+        line-height: 1.8;
+        margin-bottom: 10px;
+    }
+
+    .download-btn {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .job-entry {
+        flex-direction: column;
+        padding: 10px 10px;
+
+    }
+
+    .job-dates {
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .job-title {
+        font-size: 12px;
+    }
+
+    .job-role {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .job-description {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tech-tag {
+        color: #fff;
+        padding: 8px 10px;
+        border-radius: 15px;
+        font-size: 10px;
+    }
+
+
+    .project-entry {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .project-image-container {
+        flex: auto;
+        width: 100%;
+    }
+
+    .project-title {
+        font-size: 12px;
+    }
+
+    .project-description {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .tech {
+        padding: 8px 10px;
+        border-radius: 15px;
+        font-size: 10px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .home-main {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 0px 20px 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 36px;
+    }
+
+    .role {
+        font-size: 13.5px;
+    }
+
+    .menu {
+        list-style: none;
+        padding: 0px 0px 10px;
+    }
+
+    .main-content {
+        padding: 20px 20px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .project-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
